@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="wynik"></div>
+
+<script>
+const wynik=document.querySelector('#wynik');
+const pies={
+    rasa: 'labrador',
+    umaszczenie: 'brązowy',
+    waga: 30,
+    ulubioneJedzenie: ['wątróbka','kości','pomidor'],
+    szczekanie(){
+        return this.rasa;
+    },
+};
+
+wynik.innerHTML=pies.rasa+'<br>';
+pies.rasa='kundel';
+wynik.innerHTML=pies.rasa+'<br>';
+wynik.innerHTML+=pies.szczekanie()+'<br>';
+pies.ulubioneJedzenie.forEach(function(element){
+    wynik.innerHTML+=`<p>Ulubione jedzenie psa: ${element}</p>`;
+});
+for(const key in pies){
+    wynik.innerHTML+=`<p>${key}:${pies[key]}</p>`;
+}
+
+</script>
+</body>
+</html>
